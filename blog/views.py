@@ -1,6 +1,7 @@
 from django.shortcuts import HttpResponse
 from django.shortcuts import render
 
+
 # Create your views here.
 def index(request):
-    return HttpResponse("index connected!")
+    return render(request, "blog/posts.html")
