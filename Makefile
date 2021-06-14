@@ -18,7 +18,7 @@ dev-prompt:
 ## Linting Fixes
 .PHONY: black-fix
 black-fix:
-	black --exclude migrations --exclude venv ./
+	black --exclude "migrations|venv" ./
 
 .PHONY: isort-fix
 isort-fix:

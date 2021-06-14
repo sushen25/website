@@ -1,6 +1,5 @@
 from django.db import models
 
-
 STATUS = (
     (0, "Draft"),
     (1, "Active"),
@@ -21,4 +20,3 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return self.title
-
