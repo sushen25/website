@@ -1,4 +1,5 @@
 from django.db import models
+from django_quill.fields import QuillField
 
 STATUS = (
     (0, "Draft"),
@@ -12,7 +13,7 @@ class BlogPost(models.Model):
     slug = models.SlugField(max_length=192)
     created = models.DateTimeField(auto_now=True)
     modified = models.DateTimeField(auto_now_add=True)
-    content = models.TextField()
+    content = QuillField()
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
