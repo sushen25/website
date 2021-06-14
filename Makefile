@@ -30,11 +30,11 @@ fix: isort-fix black-fix
 ## Linting Checks
 .PHONY: black-check
 black-check:
-	black --exclude migrations --exclude venv --diff --check ./
+	black --exclude "migrations|venv" --diff --check ./
 
 .PHONY: flake8-check
 flake8-check:
-	flake8 --exclude venv ./
+	flake8 --exclude "migrations|venv" ./
 
 .PHONY: isort-check
 isort-check:
