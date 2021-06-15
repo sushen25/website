@@ -16,6 +16,21 @@ class BlogPost(models.Model):
     content = QuillField()
     status = models.IntegerField(choices=STATUS, default=0)
 
+    def can_be_viewed_by(self, user=None):
+        # Admin users can view all posts
+        if user.is_authenticated:
+            return True
+
+        # non admin users can only view active posts, status=1 -> active posts
+        if self.status == 1:  # TODO - change status choices to dict
+            return True
+        else:
+            return False
+
+    @property
+    def can_be_edited_by(self, user=None):
+        return True
+
     class Meta:
         ordering = ["-created"]
 
