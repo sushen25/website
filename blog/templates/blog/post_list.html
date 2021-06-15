@@ -15,7 +15,11 @@
                   <h5 class="mb-1">{{ post.title }}</h5>
                   <small>{{ post.created|timesince}} ago</small>
                 </div>
-                <p class="mb-1">{{ post.content|truncatechars:256}}</p>
+                {% autoescape off %}
+                    <div>
+                        {{ post.content.html|truncatechars:256}}
+                    </div>
+                {% endautoescape %}
             </a>
         {% endfor %}
     </div>
