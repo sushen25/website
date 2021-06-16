@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic import DetailView
 from django.views.generic.list import ListView
 
 from .models import BlogPost
@@ -21,6 +22,12 @@ class BlogPostListView(ListView):
         return [
             post for post in queryset if post.can_be_viewed_by(user=self.request.user)
         ]
+
+
+class BlogPostDetailView(DetailView):
+    model = BlogPost
+    context_object_name = "post"
+    template_name = "blog/post_detail.html"
 
 
 def index(request):
