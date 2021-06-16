@@ -10,17 +10,25 @@
 
     <div class="list-group">
         {% for post in post_list %}
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1">{{ post.title }}</h5>
-                  <small>{{ post.created|timesince}} ago</small>
+                  <small>{{ post.created|timesince}}</small>
                 </div>
                 {% autoescape off %}
                     <div>
                         {{ post.content.html|truncatechars:256}}
                     </div>
                 {% endautoescape %}
-            </a>
+
+                {% if user_authenticated %}
+                    <div>
+                        <a href="{% url 'admin:blog_blogpost_change' post.pk %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'admin:blog_blogpost_delete' post.pk %}" class="btn btn-danger">Delete</a>
+                    </div>
+                {% endif %}
+
+            </div>
         {% endfor %}
     </div>
 
