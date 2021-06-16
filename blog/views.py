@@ -13,6 +13,7 @@ class BlogPostListView(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(BlogPostListView, self).get_context_data()
+        context["user_authenticated"] = self.request.user.is_authenticated
         return context
 
     def get_queryset(self):
