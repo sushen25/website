@@ -15,6 +15,11 @@
                   <h5 class="mb-1">{{ post.title }}</h5>
                   <small>{{ post.created|timesince}}</small>
                 </div>
+                {% if user_authenticated %}
+                    <div>
+                        <h7>{{ post.get_status_display }}</h7>
+                    </div>
+                  {% endif %}
                 {% autoescape off %}
                     <div>
                         {{ post.content.html|truncatechars:256}}
