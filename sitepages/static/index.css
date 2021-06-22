@@ -27,3 +27,15 @@ body {
 .body-background {
     background-color: white;
 }
+
+/* Random styles */
+.ember {
+    color: #B82601;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
