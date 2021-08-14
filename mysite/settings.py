@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_quill",
     "blog.apps.BlogConfig",
+    "sitepages.apps.SitepagesConfig",
 ]
 
 MIDDLEWARE = [
