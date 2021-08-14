@@ -6,23 +6,22 @@
 
 <div class="container">
 
-    <h1>Blog posts</h1>
+    <h1 class="my-3">Blog</h1>
 
     <div class="list-group">
         {% for post in post_list %}
-            <div class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1"><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h5>
-                  <small>{{ post.created|timesince}}</small>
-                </div>
+            <div class="my-3">
+                <div>{{ post.created|date }}</div>
+                <h3><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h3>
                 {% if user_authenticated %}
                     <div>
-                        <h7>{{ post.get_status_display }}</h7>
+                        <h7><strong>{{ post.get_status_display }}</strong></h7>
                     </div>
-                  {% endif %}
+                {% endif %}
+
                 {% autoescape off %}
-                    <div>
-                        {{ post.content.html|truncatechars:256}}
+                    <div class="mb-5">
+                        {{ post.content.html|truncatechars:256 }}
                     </div>
                 {% endautoescape %}
 
@@ -33,6 +32,10 @@
                     </div>
                 {% endif %}
 
+
+                {% if not forloop.last %}
+                    <hr/>
+                {% endif %}
             </div>
         {% endfor %}
     </div>
