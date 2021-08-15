@@ -1,12 +1,151 @@
 {% extends "index.html" %}
+{% load static %}
 {% block title %}Resume{% endblock title %}
 
 {% block content %}
 
     <div class="container">
-        <div class="row my-5">
+        <div class="row my-3">
             <h1>Resume</h1>
         </div>
+
+        <div class="education-experience">
+            <div class="row my-5">
+                <h3><u>Education and Experience</u></h3>
+            </div>
+            <div class="row my-5">
+                <div class="col-4">
+                    <img style="max-width: 100%; height: 100%" src="{% static 'resume/education-image.jpg' %}">
+                </div>
+                <div class="col-8" style="background: #C4C4C4">
+                    <div class="row mt-3">
+                        <div class="col">
+                            <h4>Education</h4>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td>2018-present</td>
+                              <td></td>
+                              <td></td>
+                              <td>Bachelors of Information Technology<br/>(Monash University)</td>
+                            </tr>
+                            <tr>
+                              <td>2018-present</td>
+                              <td></td>
+                              <td></td>
+                              <td>Bachelors of Commerce<br/>(Monash University)</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <button type="button" class="btn btn-primary" style="background-color: #813772">See More</button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="row my-5">
+                <div class="col-8" style="background: #C4C4C4">
+                    <div class="row mt-3">
+                        <div class="col">
+                            <h4>Work Experience</h4>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td>2021-present</td>
+                              <td></td>
+                              <td></td>
+                              <td>Graduate Software Engineer<br/>(WSP)</td>
+                            </tr>
+                            <tr>
+                              <td>2019-2021</td>
+                              <td></td>
+                              <td></td>
+                              <td>Private Tutor<br/>(Sole Proprietorship)</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <button type="button" class="btn btn-primary" style="background-color: #813772">See More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img style="max-width: 100%; height: 100%" src="{% static 'resume/work-experience-image.jpg' %}">
+                </div>
+            </div>
+        </div>
+
+        <div class="key-strengths">
+            <div class="row my-5">
+                <h3><u>Key Strengths</u></h3>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>Communication</h4>
+                    <ul>
+                        <li>Part time job as a private tutor requiring excellent communication skills to disseminate and teach complex concepts to a large audience</li>
+                        <li>Multiple university presentations received positive feedback regarding style and delivery</li>
+                        <li>Team leader of multiple successful projects</li>
+                        <li>Fluent in spoken Telugu and working proficiency in spoken Hindi</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>Leadership</h4>
+                    <ul>
+                        <li>Create and maintain own tuition business</li>
+                        <li>Participated in Monash University’s peer mentor program, responsible for multiple new undergraduate students</li>
+                        <li>Led a team to collect data for research related to growth of various plants for James Cook University</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>Public Speaking</h4>
+                    <ul>
+                        <li>Previous occupational roles involved teaching to a class of over 50 students</li>
+                        <li>Own tuition business responsible for tutoring 16 students every week ranging from year 9 to year 12</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="referees">
+            <div class="row my-3">
+                <h3><u>Referees</u></h3>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <ul style="list-style: none">
+                        <li>Mr. Madira Ginnige</li>
+                        <li>CEO</li>
+                        <li>AIMS High Academy</li>
+                        <li>Tel: 0432 972 667</li>
+                        <li>Email: madiraginnige1@yahoo.com</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary mt-5" style="background-color: #813772">Download as Pdf</button>
+
     </div>
     
 
